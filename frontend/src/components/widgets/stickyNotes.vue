@@ -37,7 +37,7 @@ export default {
   position: relative;
   background-color: #f4f5b2;
   float: left;
-  margin: 2rem;
+  margin: 1.8rem;
 }
 .fa-paperclip {
   position: absolute;

@@ -104,6 +104,7 @@ export default {
   bottom: 0;
   margin-left: 200px;
   overflow-y:auto;
+  padding-top:1rem;
 }
 .add-btn {
   position: absolute;
