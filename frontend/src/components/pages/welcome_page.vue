@@ -45,16 +45,16 @@
               <button class="btn btn-lg btn-light" type="button" name="button">Click Me</button>
             </div>
             <div class="col-md-6 login-div">
-              <form class="login-form" action="index.html" method="post">
+              <div class="login-form" action="index.html" method="post">
                 <h3>Access Your Account</h3>
-                <input type="email" name="username" placeholder="Email" />
+                <input type="email" name="username" v-model="username" placeholder="Email" />
                 <br />
-                <input type="password" name="password" placeholder="Password" />
+                <input type="password" name="password" v-model="password" placeholder="Password" />
                 <br />
-                <button class="login-btn"  @click="gotoportal()" type="submit" name="button">Login</button>
+                <button class="login-btn" @click="gotoportal()" name="button">Login</button>
                 <br />
                 <a class="register-link" href="#">Register here</a>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -172,7 +172,12 @@
             <div class="col-md-6">
               <h2>Upload</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <button class="btn btn-sm btn-light footer-btn" type="button" name="login" @click="gotoportal()" >Login</button>
+              <button
+                class="btn btn-sm btn-light footer-btn"
+                type="button"
+                name="login"
+                @click="gotoportal()"
+              >Login</button>
               <button class="btn btn-sm btn-light footer-btn" type="button" name="Register">Register</button>
             </div>
             <div class="col-md-6">
@@ -218,12 +223,22 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      username: "",
+      password: ""
+    };
   },
   methods: {
-    gotoportal(){
-            this.$router.push("/portal/dashboard")
-        }
+    gotoportal() {
+      if (
+        this.username === "admin@upload.com" &&
+        this.password == "superadmin@123"
+      ) {
+        this.$router.push("/portal/dashboard");
+      } else {
+        alert("WRONG USERNAME OF PASSWORD");
+      }
+    }
   }
 };
 </script>
@@ -302,9 +317,9 @@ section {
 }
 .login-btn {
   border: thin;
-  border-radius:5px;
-  background-color:#cfcece;
-  padding: .2rem .8rem;
+  border-radius: 5px;
+  background-color: #cfcece;
+  padding: 0.2rem 0.8rem;
   cursor: pointer;
 }
 .login-form input {
@@ -312,7 +327,7 @@ section {
   margin-top: 1rem;
   border-radius: 0;
   border: solid #000 thin;
-  padding-left:1rem;
+  padding-left: 1rem;
 }
 .login-btn {
   margin-top: 1rem;

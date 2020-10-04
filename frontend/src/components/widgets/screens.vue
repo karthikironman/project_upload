@@ -4,8 +4,12 @@
       Device Id :
       <b>{{device_id}}</b>
     </p>
-    <div v-if="image_name.length > 0" class="img-name">{{image_name}}</div>
-    <img v-else class="screen-img" :src="url" />
+    <b-spinner class="pt-4 spinners" v-if="loading" label="Spinning"></b-spinner>
+    <div v-else>
+      <div v-if="image_name.length > 0 " class="img-name">{{image_name}}</div>
+      <img v-else class="screen-img" :src="url" />
+    </div>
+
     <input type="file" @change="onFileSelected" ref="fileInput" style="display:none" />
     <button @click="$refs.fileInput.click()">CHANGE IMAGE</button>
     <b-button @click="onUpload" class="m-3 buttonn" variant="dark">UPLOAD</b-button>
@@ -18,7 +22,8 @@ export default {
   data() {
     return {
       image_name: "",
-      selectedFile: null
+      selectedFile: null,
+      loading: false
     };
   },
   methods: {
@@ -30,7 +35,7 @@ export default {
     onUpload() {
       const fd = new FormData();
       fd.append("image", this.selectedFile, this.selectedFile.name);
-
+      this.loading = true;
       axios
         .post(
           `http://karthik.buzz:1880/updateScreen?device_id=${this.device_id}`,
@@ -42,6 +47,7 @@ export default {
         .catch()
         .finally(() => {
           this.image_name = "";
+          this.loading = false;
         });
     }
   }
@@ -63,7 +69,7 @@ export default {
 .screen-img {
   width: 95%;
   border-radius: 4px;
-  max-height: 60%;
+  max-height: 8.5rem;
 }
 .device_id {
   font-size: 20px;
@@ -79,5 +85,8 @@ export default {
   margin: 0 auto;
   font-weight: 900;
   padding-top: 4rem;
+}
+.spinners {
+  margin: 3rem;
 }
 </style>

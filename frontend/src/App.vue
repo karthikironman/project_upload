@@ -21,26 +21,26 @@ export default {
                         title: 'Dashboard',
                         icon: 'fa fa-signal'
                     },
-                    {
-                        href: '/portal/media',
-                        title: 'Media',
-                        icon: 'fa fa-image'
-                    },
-                    {
-                        href: '/portal/apps',
-                        title: 'Apps',
-                        icon: 'fa fa-th'
-                    },
+                    // {
+                    //     href: '/portal/media',
+                    //     title: 'Media',
+                    //     icon: 'fa fa-image'
+                    // },
+                    // {
+                    //     href: '/portal/apps',
+                    //     title: 'Apps',
+                    //     icon: 'fa fa-th'
+                    // },
                     {
                         href: '/portal/my_plan',
                         title: 'My plan',
                         icon: 'fa fa-play'
                     },
-                    {
-                        href: '/portal/support',
-                        title: 'support',
-                        icon: 'fa fa-comment'
-                    }
+                    // {
+                    //     href: '/portal/support',
+                    //     title: 'support',
+                    //     icon: 'fa fa-comment'
+                    // }
                     
                 ]
     }
