@@ -1,0 +1,792 @@
+[
+    {
+        "id": "ec97f88f.670f18",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a7f5bf60.c094a",
+        "type": "tab",
+        "label": "library",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4a790ab4.30cf54",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "http://34.222.93.6",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "f853110.2e07ff",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "f7472d82.c9fc",
+        "type": "mongodb2",
+        "z": "",
+        "uri": "mongodb://localhost:27017",
+        "name": "",
+        "options": "",
+        "parallelism": "-1"
+    },
+    {
+        "id": "4b8d8ffb.dc0ee",
+        "type": "aws-config-s3",
+        "z": ""
+    },
+    {
+        "id": "25106bd4.353024",
+        "type": "aws-config-s3",
+        "z": ""
+    },
+    {
+        "id": "905aba52.b0e458",
+        "type": "aws-config-s3",
+        "z": ""
+    },
+    {
+        "id": "cda804b9.c040b8",
+        "type": "mqtt in",
+        "z": "a7f5bf60.c094a",
+        "name": "",
+        "topic": "test",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "f853110.2e07ff",
+        "x": 270,
+        "y": 40,
+        "wires": [
+            [
+                "13a045ac.8c300a"
+            ]
+        ]
+    },
+    {
+        "id": "5f39e93.6330d18",
+        "type": "mqtt out",
+        "z": "a7f5bf60.c094a",
+        "name": "",
+        "topic": "test",
+        "qos": "",
+        "retain": "",
+        "broker": "f853110.2e07ff",
+        "x": 490,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "7e60b94b.2b2ed8",
+        "type": "inject",
+        "z": "a7f5bf60.c094a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "5f39e93.6330d18"
+            ]
+        ]
+    },
+    {
+        "id": "13a045ac.8c300a",
+        "type": "debug",
+        "z": "a7f5bf60.c094a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "9de055fc.2f6388",
+        "type": "mqtt in",
+        "z": "a7f5bf60.c094a",
+        "name": "",
+        "topic": "test1",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "f853110.2e07ff",
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "d09819e8.eeb688"
+            ]
+        ]
+    },
+    {
+        "id": "d09819e8.eeb688",
+        "type": "debug",
+        "z": "a7f5bf60.c094a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "7cada05.2f7af6",
+        "type": "mongodb2 in",
+        "z": "a7f5bf60.c094a",
+        "service": "_ext_",
+        "configNode": "f7472d82.c9fc",
+        "name": "",
+        "collection": "device",
+        "operation": "insert",
+        "x": 600,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3ecb1e16.5d59b2",
+        "type": "inject",
+        "z": "a7f5bf60.c094a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"test\":\"karthik\"}",
+        "payloadType": "json",
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [
+                "7cada05.2f7af6"
+            ]
+        ]
+    },
+    {
+        "id": "54344214.ccae5c",
+        "type": "uibuilder",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "topic": "",
+        "url": "screen",
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "showfolder": false,
+        "x": 550,
+        "y": 100,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "72dd5dcb.6c71a4",
+        "type": "http in",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "url": "/screen/geturl",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 230,
+        "y": 400,
+        "wires": [
+            [
+                "388ff5c.7243e0a"
+            ]
+        ]
+    },
+    {
+        "id": "388ff5c.7243e0a",
+        "type": "mongodb2 in",
+        "z": "ec97f88f.670f18",
+        "service": "_ext_",
+        "configNode": "f7472d82.c9fc",
+        "name": "",
+        "collection": "device",
+        "operation": "find.toArray",
+        "x": 280,
+        "y": 460,
+        "wires": [
+            [
+                "50c74c6d.5c4674"
+            ]
+        ]
+    },
+    {
+        "id": "50c74c6d.5c4674",
+        "type": "switch",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "property": "payload.length",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 550,
+        "y": 460,
+        "wires": [
+            [
+                "fa6a1625.8558e8"
+            ],
+            [
+                "e28c115f.c18ad"
+            ]
+        ]
+    },
+    {
+        "id": "fa6a1625.8558e8",
+        "type": "function",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "func": "msg.payload = {\n    device_id:msg.req.query.device_id,\n    url:\"https://upload-project-ieee.s3.ap-south-1.amazonaws.com/default.png\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 700,
+        "y": 460,
+        "wires": [
+            [
+                "26efd5d9.de074a"
+            ]
+        ]
+    },
+    {
+        "id": "e28c115f.c18ad",
+        "type": "function",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "func": "msg.payload ={\n    device_id:msg.req.query.device_id\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 300,
+        "y": 600,
+        "wires": [
+            [
+                "fa898148.3b728"
+            ]
+        ]
+    },
+    {
+        "id": "26efd5d9.de074a",
+        "type": "mongodb2 in",
+        "z": "ec97f88f.670f18",
+        "service": "_ext_",
+        "configNode": "f7472d82.c9fc",
+        "name": "",
+        "collection": "device",
+        "operation": "insert",
+        "x": 560,
+        "y": 540,
+        "wires": [
+            [
+                "e28c115f.c18ad"
+            ]
+        ]
+    },
+    {
+        "id": "fa898148.3b728",
+        "type": "mongodb2 in",
+        "z": "ec97f88f.670f18",
+        "service": "_ext_",
+        "configNode": "f7472d82.c9fc",
+        "name": "",
+        "collection": "device",
+        "operation": "find.toArray",
+        "x": 580,
+        "y": 600,
+        "wires": [
+            [
+                "9fff095a.19e2c8",
+                "11b2014c.32a66f"
+            ]
+        ]
+    },
+    {
+        "id": "11b2014c.32a66f",
+        "type": "debug",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "9fff095a.19e2c8",
+        "type": "http response",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 890,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "5e63896b.cc2478",
+        "type": "inject",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 60,
+        "wires": [
+            [
+                "5f93efed.3d00d"
+            ]
+        ]
+    },
+    {
+        "id": "5f93efed.3d00d",
+        "type": "function",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "func": "msg = {\n    switch : \"updateScreen\",\n    url : \"https://static.teamviewer.com/resources/2019/04/TeamViewer-Screen-Share-mobile-to-laptop-1024x744.png\",\n    device_id:\"477931\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 60,
+        "wires": [
+            [
+                "54344214.ccae5c"
+            ]
+        ]
+    },
+    {
+        "id": "f3efd892.4b3b58",
+        "type": "function",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "func": "msg = {\n    switch : \"updateScreen\",\n    url :`https://upload-project-ieee.s3.ap-south-1.amazonaws.com/${msg.req.files[0].originalname}`,\n    device_id: msg.req.query.device_id\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 540,
+        "y": 160,
+        "wires": [
+            [
+                "54344214.ccae5c"
+            ]
+        ]
+    },
+    {
+        "id": "5ee1d0c.b9ab23",
+        "type": "function",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "func": "msg = {\n    switch : \"updateScreen\",\n    url : \"https://2672686a4cf38e8c2458-2712e00ea34e3076747650c92426bbb5.ssl.cf1.rackcdn.com/2019-11-19-10-05-22.png\",\n    device_id:\"477931\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 100,
+        "wires": [
+            [
+                "54344214.ccae5c"
+            ]
+        ]
+    },
+    {
+        "id": "306cd998.102726",
+        "type": "inject",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "5ee1d0c.b9ab23"
+            ]
+        ]
+    },
+    {
+        "id": "32107d14.3dce62",
+        "type": "http in",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "url": "/updateScreen",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "3334d540.74e8fa"
+            ]
+        ]
+    },
+    {
+        "id": "3334d540.74e8fa",
+        "type": "function",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "func": "msg.filename = msg.req.files[0].originalname;\nmsg.payload = msg.req.files[0].buffer;\nmsg.deletefile = \"IMAGE.png\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "8769d957.d76d38"
+            ]
+        ]
+    },
+    {
+        "id": "ce43741b.f75938",
+        "type": "amazon s3 put",
+        "z": "ec97f88f.670f18",
+        "aws": "905aba52.b0e458",
+        "bucket": "upload-project-ieee",
+        "filename": "",
+        "localFilename": "IMAGE.png",
+        "contentType": "image/jpeg",
+        "contentEncoding": "",
+        "region": "ap-southeast-1",
+        "isBase64": false,
+        "name": "",
+        "acl": "public-read-write",
+        "outputs": 1,
+        "x": 760,
+        "y": 220,
+        "wires": [
+            [
+                "d07fb3b2.7d959"
+            ]
+        ]
+    },
+    {
+        "id": "1c3a4f69.344ed1",
+        "type": "file",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "filename": "IMAGE.png",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 550,
+        "y": 240,
+        "wires": [
+            [
+                "ce43741b.f75938"
+            ]
+        ]
+    },
+    {
+        "id": "d07fb3b2.7d959",
+        "type": "function",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "func": "msg.payload =[{\n    device_id: msg.req.query.device_id\n},\n{$set:{url:`https://upload-project-ieee.s3.ap-south-1.amazonaws.com/${msg.req.files[0].originalname}`}}] \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 280,
+        "y": 320,
+        "wires": [
+            [
+                "c86eea00.538ff8"
+            ]
+        ]
+    },
+    {
+        "id": "c86eea00.538ff8",
+        "type": "mongodb2 in",
+        "z": "ec97f88f.670f18",
+        "service": "_ext_",
+        "configNode": "f7472d82.c9fc",
+        "name": "",
+        "collection": "device",
+        "operation": "update",
+        "x": 540,
+        "y": 320,
+        "wires": [
+            [
+                "43c59d17.a7fe34",
+                "55cdb324.0f20fc",
+                "f3efd892.4b3b58"
+            ]
+        ]
+    },
+    {
+        "id": "43c59d17.a7fe34",
+        "type": "http response",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 810,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "55cdb324.0f20fc",
+        "type": "debug",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a20fabfe.b6fa78",
+        "type": "http in",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "url": "allscreens",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 680,
+        "wires": [
+            [
+                "8f1d8db9.a2989"
+            ]
+        ]
+    },
+    {
+        "id": "b50ae4b5.1752b8",
+        "type": "mongodb2 in",
+        "z": "ec97f88f.670f18",
+        "service": "_ext_",
+        "configNode": "f7472d82.c9fc",
+        "name": "",
+        "collection": "device",
+        "operation": "find.toArray",
+        "x": 420,
+        "y": 800,
+        "wires": [
+            [
+                "3d13a33b.22b67c",
+                "1b4ed33d.6beecd"
+            ]
+        ]
+    },
+    {
+        "id": "8f1d8db9.a2989",
+        "type": "function",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "func": "msg.payload={\n    device_id:{$ne:100000}\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 270,
+        "y": 740,
+        "wires": [
+            [
+                "b50ae4b5.1752b8"
+            ]
+        ]
+    },
+    {
+        "id": "3d13a33b.22b67c",
+        "type": "http response",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 720,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "1b4ed33d.6beecd",
+        "type": "debug",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "b6fac921.985948",
+        "type": "inject",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 820,
+        "wires": [
+            [
+                "8f1d8db9.a2989"
+            ]
+        ]
+    },
+    {
+        "id": "8769d957.d76d38",
+        "type": "fs-ops-delete",
+        "z": "ec97f88f.670f18",
+        "name": "",
+        "path": "",
+        "pathType": "str",
+        "filename": "deletefile",
+        "filenameType": "msg",
+        "x": 310,
+        "y": 260,
+        "wires": [
+            [
+                "1c3a4f69.344ed1"
+            ]
+        ]
+    }
+]

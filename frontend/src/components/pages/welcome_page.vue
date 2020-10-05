@@ -38,15 +38,15 @@
         <div class="container-fluid">
           <div class="container row">
             <div class="col-md-6 intro-div">
-              <h1 class="intro-heading">Introduction</h1>
+              <h1 class="intro-heading">Your Smart Signage</h1>
               <p
                 class="intro-para"
-              >We are upcoming Digital Signage organisation aimed for make in India movement. Very cost affordable asset management and Content Display Screen Signage setup. Getting a Pi and AWS cloud based Iot System for benefiting social communication in eco friendly way, by using our products you can able to reduce paper use. And most effective way is Content management with dedicated database. Hoo.. isn't it cool!!</p>
-              <button class="btn btn-lg btn-light" type="button" name="button">Know more..</button>
+              >Whether you have 1 or 50 screens, UPLOAD provides an easy to use platform to interact with and inform students and staff, ensuring the right message goes out at the right time to the right people.</p>
+              <button class="btn btn-lg btn-light" type="button" name="button">Know more</button>
             </div>
             <div class="col-md-6 login-div">
               <div class="login-form" action="index.html" method="post">
-                <h3>Access Your Account</h3>
+                <h3>Get Started Free!</h3>
                 <input type="email" name="username" v-model="username" placeholder="Email" />
                 <br />
                 <input type="password" name="password" v-model="password" placeholder="Password" />
@@ -67,29 +67,29 @@
               <h2 class="feature-icon">
                 <i class="fas fa-user-cog"></i>
               </h2>
-              <h2 class="feature-title">Manage Content</h2>
+              <h2 class="feature-title">User Management</h2>
               <p>Assign administration members to manage content such as admins and moderators.</p>
             </div>
             <div class="col-lg-3 col-md-4 feature-div">
               <h2 class="feature-icon">
                 <i class="fas fa-desktop"></i>
               </h2>
-              <h2 class="feature-title">Multiple Screens</h2>
-              <p>Add many screens from single login.</p>
+              <h2 class="feature-title">Display</h2>
+              <p>Easy registration, remote management, supports any size, resolution & orientation</p>
             </div>
             <div class="col-lg-3 col-md-4 feature-div">
               <h2 class="feature-icon">
                 <i class="fas fa-shield-alt"></i>
               </h2>
-              <h2 class="feature-title">Safe Database</h2>
-              <p>We are using a Secure Database, so you can access a same login environment for controlling your screens.</p>
+              <h2 class="feature-title">Security</h2>
+              <p>Top-grade encryption security features to make sure your screens stay safe.</p>
             </div>
             <div class="col-lg-3 col-md-4 feature-div">
               <h2 class="feature-icon">
                 <i class="fas fa-tasks"></i>
               </h2>
-              <h2 class="feature-title">Much More</h2>
-              <p>We are currently working on other features, Stay tunned!!</p>
+              <h2 class="feature-title">Interactive signage</h2>
+              <p>rovides the scope of building customized signage application.</p>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@
               We are Team UPLOAD, budding entrepreneurs from Cambridge Institute of Technology, Bangalore.
               Our Project is aired by IEEE Hac Fundings, we lanuched our Upload 1.o on Oct 9th, 2020. 
             </p>
-            <button class="btn btn-lg" type="button" name="button">Know more...</button>
+            <button class="btn btn-lg" type="button" name="button">Click Me</button>
           </div>
           <!-- </div> -->
         </div>
@@ -135,13 +135,13 @@
               <div class="container testimonial-info">
                 <img class="profile-img" src="@/assets/profile.png" alt="profile-img" />
                 <p>"Team with sheer determination to progress."</p>
-                <p class="nameBy">-Mukesh Ambani</p>
+                <p class="nameBy">-Mukesh Raj</p>
               </div>
             </div>
             <div class="carousel-item">
               <div class="container testimonial-info">
                 <img class="profile-img" src="@/assets/profile.png" alt="profile-img" />
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                <p>"Simplistic signage solution for my day to day usage "</p>
                 <p class="nameBy">-Mukesh Ambani</p>
               </div>
             </div>
@@ -171,7 +171,7 @@
           <div class="container row">
             <div class="col-md-6">
               <h2>Upload</h2>
-              <p>Team with sheer determination to progress</p>
+              <p>Still not using digital signage? Wait, what? That simply won’t do. Once you give it a try, you’ll enjoy a ream of benefits that will leave you wondering how you lived without it. So go on, sign up for a free plan today and get in touch with us for any questions you may have about getting started.</p>
               <button
                 class="btn btn-sm btn-light footer-btn"
                 type="button"

@@ -12,7 +12,22 @@
 
     <input type="file" @change="onFileSelected" ref="fileInput" style="display:none" />
     <button @click="$refs.fileInput.click()">CHANGE IMAGE</button>
-    <b-button @click="onUpload" class="m-3 buttonn" variant="dark">UPLOAD</b-button>
+    <b-button
+      @click="onUpload"
+   
+      v-if="image_name.length > 0 "
+      class="m-3 buttonn"
+      variant="primary"
+    >UPLOAD</b-button>
+
+    <b-icon-trash class="trash-icon" @click="showdelete()" v-b-modal.modal-1 v-else></b-icon-trash>
+    <b-modal :id="device_id" hide-footer title="DELETE SCREEN">
+      <h5 class="text-center">Are you sure to delete this screen?</h5>
+
+      <h4 class="my-4 text-center">{{device_id}}</h4>
+      <b-spinner class="pt-4 spinners-delete" v-if="deleteLoading" label="Spinning"></b-spinner>
+      <b-button class="delete-btn" @click="deleteScreen()" v-else variant="outline-primary">Delete</b-button>
+    </b-modal>
   </div>
 </template>
 <script>
@@ -23,10 +38,29 @@ export default {
     return {
       image_name: "",
       selectedFile: null,
-      loading: false
+      loading: false,
+      deleteLoading: false
     };
   },
   methods: {
+    deleteScreen() {
+      this.deleteLoading = true;
+      // setTimeout(()=>{this.deleteLoading = false},1000)
+      let url = "http://karthik.buzz:1880/deletescreen";
+      let data = {
+        device_id: this.device_id
+      };
+      axios
+        .put(url, data)
+        .then(() => {this.$emit("update");})
+        .catch()
+        .finally(() => {
+          this.deleteLoading = false;
+        });
+    },
+    showdelete() {
+      this.$bvModal.show(this.device_id);
+    },
     onFileSelected(event) {
       console.log(event);
       this.selectedFile = event.target.files[0];
@@ -60,6 +94,7 @@ export default {
   border: 2px solid rgb(104, 94, 94);
   background-color: #d6d6f0;
   margin: 2rem;
+  position: relative;
   border-radius: 4px;
   float: left;
   -webkit-box-shadow: 0px -1px 30px -2px rgba(0, 0, 0, 0.75);
@@ -69,7 +104,13 @@ export default {
 .screen-img {
   width: 95%;
   border-radius: 4px;
-  max-height: 8.5rem;
+  height: 8.5rem;
+}
+.screen-img-modal {
+  width: 10rem;
+  border-radius: 4px;
+  height: 8.5rem;
+  margin-left: 6rem;
 }
 .device_id {
   font-size: 20px;
@@ -81,12 +122,29 @@ export default {
   width: 95%;
   overflow-wrap: break-word;
   border-radius: 4px;
-  height: 9.9rem;
+  height: 8.2rem;
   margin: 0 auto;
   font-weight: 900;
-  padding-top: 4rem;
+  padding-top: 3rem;
 }
 .spinners {
   margin: 3rem;
+}
+.trash-icon {
+  position: absolute;
+  bottom: 0.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  right: 0.2rem;
+}
+.trash-icon:hover {
+  color: red;
+}
+.delete-btn {
+  width: 100%;
+}
+.spinners-delete {
+  margin: 0 auto;
+  display: block;
 }
 </style>
