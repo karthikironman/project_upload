@@ -41,8 +41,8 @@
               <h1 class="intro-heading">Introduction</h1>
               <p
                 class="intro-para"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <button class="btn btn-lg btn-light" type="button" name="button">Click Me</button>
+              >We are upcoming Digital Signage organisation aimed for make in India movement. Very cost affordable asset management and Content Display Screen Signage setup. Getting a Pi and AWS cloud based Iot System for benefiting social communication in eco friendly way, by using our products you can able to reduce paper use. And most effective way is Content management with dedicated database. Hoo.. isn't it cool!!</p>
+              <button class="btn btn-lg btn-light" type="button" name="button">Know more..</button>
             </div>
             <div class="col-md-6 login-div">
               <div class="login-form" action="index.html" method="post">
@@ -67,29 +67,29 @@
               <h2 class="feature-icon">
                 <i class="fas fa-user-cog"></i>
               </h2>
-              <h2 class="feature-title">titleOne</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h2 class="feature-title">Manage Content</h2>
+              <p>Assign administration members to manage content such as admins and moderators.</p>
             </div>
             <div class="col-lg-3 col-md-4 feature-div">
               <h2 class="feature-icon">
                 <i class="fas fa-desktop"></i>
               </h2>
-              <h2 class="feature-title">titleTwo</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h2 class="feature-title">Multiple Screens</h2>
+              <p>Add many screens from single login.</p>
             </div>
             <div class="col-lg-3 col-md-4 feature-div">
               <h2 class="feature-icon">
                 <i class="fas fa-shield-alt"></i>
               </h2>
-              <h2 class="feature-title">titleThree</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h2 class="feature-title">Safe Database</h2>
+              <p>We are using a Secure Database, so you can access a same login environment for controlling your screens.</p>
             </div>
             <div class="col-lg-3 col-md-4 feature-div">
               <h2 class="feature-icon">
                 <i class="fas fa-tasks"></i>
               </h2>
-              <h2 class="feature-title">titleFour</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h2 class="feature-title">Much More</h2>
+              <p>We are currently working on other features, Stay tunned!!</p>
             </div>
           </div>
         </div>
@@ -103,10 +103,10 @@
           <div class="col-md-6 about-div">
             <h2>About Us</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-              aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              We are Team UPLOAD, budding entrepreneurs from Cambridge Institute of Technology, Bangalore.
+              Our Project is aired by IEEE Hac Fundings, we lanuched our Upload 1.o on Oct 9th, 2020. 
             </p>
-            <button class="btn btn-lg" type="button" name="button">Click Me</button>
+            <button class="btn btn-lg" type="button" name="button">Know more...</button>
           </div>
           <!-- </div> -->
         </div>
@@ -127,14 +127,14 @@
             <div class="carousel-item active">
               <div class="container testimonial-info">
                 <img class="profile-img" src="@/assets/profile.png" alt="profile-img" />
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
-                <p class="nameBy">-Mukesh Ambani</p>
+                <p>"I wondered this team could change the way of Digital Signage made in India."</p>
+                <p class="nameBy">-Dr.Basavaraju C</p>
               </div>
             </div>
             <div class="carousel-item">
               <div class="container testimonial-info">
                 <img class="profile-img" src="@/assets/profile.png" alt="profile-img" />
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                <p>"Team with sheer determination to progress."</p>
                 <p class="nameBy">-Mukesh Ambani</p>
               </div>
             </div>
@@ -171,7 +171,7 @@
           <div class="container row">
             <div class="col-md-6">
               <h2>Upload</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Team with sheer determination to progress</p>
               <button
                 class="btn btn-sm btn-light footer-btn"
                 type="button"
@@ -211,7 +211,7 @@
 
             <div class="copyright">
               <hr />
-              <small>Copyright © 2020.</small>
+              <small>All Copyright Reserved ©Upload_2020.</small>
               <!-- <p>hello</p> -->
             </div>
           </div>
