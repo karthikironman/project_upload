@@ -21,11 +21,11 @@ export default {
                         title: 'Dashboard',
                         icon: 'fa fa-signal'
                     },
-                    // {
-                    //     href: '/portal/media',
-                    //     title: 'Media',
-                    //     icon: 'fa fa-image'
-                    // },
+                     {
+                         href: '/portal/media',
+                         title: 'Media',
+                         icon: 'fa fa-image'
+                     },
                     // {
                     //     href: '/portal/apps',
                     //     title: 'Apps',
